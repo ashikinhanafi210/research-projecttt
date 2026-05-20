@@ -1,0 +1,528 @@
+[20/5/2026 2:44 PM] Shikin UMK: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD2 Pineapple Ripening Kinetics & Derivatives</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for modern aesthetics */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #10b981;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Navigation / Header -->
+    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-amber-400 to-emerald-500 p-2 rounded-xl shadow-lg">
+                    <!-- SVG Pineapple Icon -->
+                    <svg class="w-6 h-6 text-slate-950" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold tracking-tight bg-gradient-to-r from-amber-400 to-emerald-400 bg-clip-text text-transparent">Biokinetic Derivative Analyzer</h1>
+                    <p class="text-xs text-slate-400">SFP: Agro Product Technology Lab • Malaysia</p>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                    MD2 Pineapple Ripening Study
+                </span>
+                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                    Calculus in Bioscience
+                </span>
+            </div>
+        </div>
+    </header>
+[20/5/2026 2:44 PM] Shikin UMK: <!-- Main Content Grid -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Left Column: Math, Scenario & Context (5 Columns on Large screens) -->
+        <section class="lg:col-span-5 flex flex-col space-y-6">
+            
+            <!-- Bioscience Problem & Malaysian Context -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center space-x-2 text-emerald-400 mb-3">
+                    <span class="p-1.5 bg-emerald-500/10 rounded-lg">🌱</span>
+                    <h2 class="text-sm font-semibold uppercase tracking-wider">Agro-Product Scenario</h2>
+                </div>
+                <h3 class="text-xl font-bold text-slate-100 mb-2">MD2 Pineapple Maturation & Sugar Accumulation</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    In Johor's pineapple hubs (e.g., Simpang Renggam), determining the exact harvest window is crucial for exporters. Premium fresh-cut and canning industries demand an optimal Total Soluble Solids index (<strong class="text-amber-400">14 to 18 °Brix</strong>). 
+                    Sugar accumulation follows a 30-day logistic maturation phase.
+                </p>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    As an agro-technologist, you cannot just look at the total sugar level. You must study the <strong class="text-emerald-400">rate of accumulation (the derivative, f'(x))</strong>. Finding when the acceleration peaks (the inflection point) tells us when the fruit's metabolic sucrose synthesis enzyme pathway (SPS) is at its zenith!
+                </p>
+                
+                <div class="border-t border-slate-800/85 pt-4 mt-2">
+                    <span class="text-xs font-semibold uppercase text-slate-400 block mb-2">Informed by Real Research:</span>
+                    <div class="space-y-1.5 text-xs text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                            <span>Malaysian Agricultural Research and Development Institute (<strong class="text-slate-300">MARDI</strong>) MD2 Cultivation Manual</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                            <span>Malaysian Pineapple Industry Board (<strong class="text-slate-300">MPIB</strong>) Standard Kualiti Nanas MD2</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full"></span>
+                            <span>Journal of Tropical Agriculture & Food Science (Ripening Kinetics)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mathematical Modeling Section -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl relative overflow-hidden">
+                <div class="absolute right-0 top-0 translate-x-12 -translate-y-6 w-36 h-36 bg-emerald-500/5 rounded-full blur-2xl"></div>
+                <div class="flex items-center space-x-2 text-amber-400 mb-4">
+                    <span class="p-1.5 bg-amber-500/10 rounded-lg">📐</span>
+                    <h2 class="text-sm font-semibold uppercase tracking-wider">The Mathematical Model</h2>
+                </div>
+[20/5/2026 2:44 PM] Shikin UMK: <!-- Sugar Accumulation Model f(x) -->
+                <div class="space-y-4">
+                    <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-amber-400 font-semibold uppercase">Primary Function (Brix Curve)</span>
+                            <span class="text-xs text-slate-500">f(x)</span>
+                        </div>
+                        <div class="text-lg font-mono text-center my-2 text-slate-100">
+                            f(x) = <span class="text-amber-400">16</span> / [ 1 + e<sup>-k(x - 15)</sup> ] + <span class="text-emerald-400">2</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">
+                            Where <strong class="text-slate-300">x</strong> represents Ripening Stage (0 to 30 Days), <strong class="text-amber-400">16 °Brix</strong> is active sugar capacity, <strong class="text-emerald-400">2 °Brix</strong> is basal sugar, and <strong class="text-emerald-400">k</strong> is the ripening rate constant dependent on temperature.
+                        </p>
+                    </div>
+
+                    <!-- Derivative f'(x) -->
+                    <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                        <div class="flex justify-between items-center mb-1">
+                            <span class="text-xs text-emerald-400 font-semibold uppercase">First Derivative (Accumulation Rate)</span>
+                            <span class="text-xs text-slate-500">f'(x) = df/dx</span>
+                        </div>
+                        <div class="text-lg font-mono text-center my-2 text-slate-100">
+                            f'(x) = <span class="text-emerald-400">16 · k · e<sup>-k(x - 15)</sup></span> / [ 1 + e<sup>-k(x - 15)</sup> ]<sup>2</sup>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-2">
+                            Applying the quotient and chain rules yields the daily accumulation speed in <strong class="text-emerald-400">°Brix per day</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Column: Interactive Graph & Controls (7 Columns on Large screens) -->
+        <section class="lg:col-span-7 flex flex-col space-y-6">
+            
+            <!-- Dynamic Controls Card -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-100">Agro-Environmental Controls</h3>
+                        <p class="text-xs text-slate-400">Simulate how ambient Malaysian conditions change enzyme activation rates (k).</p>
+                    </div>
+                    <!-- Temperature slider representing tropical ambient fluctuations -->
+                    <div class="flex items-center space-x-4 bg-slate-950 px-4 py-2.5 rounded-xl border border-slate-800 w-full md:w-auto">
+                        <span class="text-xs font-semibold text-slate-400 whitespace-nowrap">Ambient Temp:</span>
+                        <input id="tempSlider" type="range" min="24" max="34" value="28" step="1" 
+                               class="w-full md:w-32 h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
+                        <span id="tempVal" class="text-sm font-bold text-emerald-400 w-8 text-right">28°C</span>
+                    </div>
+                </div>
+            </div>
+[20/5/2026 2:44 PM] Shikin UMK: <!-- Chart Canvas Block -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl flex flex-col relative">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider block mb-0.5">Interactive Kinematics</span>
+                        <h3 class="text-lg font-bold text-slate-100">Maturation vs. Accumulation Speed</h3>
+                    </div>
+                    <span class="text-xs text-slate-400 hidden sm:inline flex items-center space-x-1.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span>
+                        <span>Click anywhere on the curve to inspect derivatives</span>
+                    </span>
+                </div>
+
+                <!-- Chart.js Container -->
+                <div class="relative min-h-[300px] md:min-h-[350px] w-full bg-slate-950 rounded-xl p-2 border border-slate-850">
+                    <canvas id="kineticsChart"></canvas>
+                </div>
+                
+                <div class="mt-2 text-center text-xs text-slate-500 block md:hidden">
+                    👈 Swipe/Tap chart coordinates to read current derivative speeds.
+                </div>
+            </div>
+
+            <!-- Interactive Analytics Readout Panel -->
+            <div id="inspectorPanel" class="bg-gradient-to-br from-slate-900 to-slate-950 border border-emerald-500/25 rounded-2xl p-6 shadow-xl relative transition-all duration-300">
+                <div class="absolute -right-2 -top-2 bg-emerald-500 text-slate-950 font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider shadow-md animate-pulse">
+                    Dynamic Inspector
+                </div>
+                
+                <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-4">Live Point-in-Time Harvest Analysis</h4>
+                
+                <!-- Metrics Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block mb-1">Time Elapsed</span>
+                        <div class="flex items-baseline space-x-1">
+                            <span id="statDay" class="text-2xl font-black text-slate-100">15</span>
+                            <span class="text-xs text-slate-400">Days After Maturation</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block mb-1">Sugar Level [f(x)]</span>
+                        <div class="flex items-baseline space-x-1">
+                            <span id="statBrix" class="text-2xl font-black text-amber-400">10.0</span>
+                            <span class="text-xs text-slate-400">°Brix</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/50 p-3.5 rounded-xl border border-slate-800">
+                        <span class="text-xs text-slate-400 block mb-1">Accumulation Rate [f'(x)]</span>
+                        <div class="flex items-baseline space-x-1">
+                            <span id="statRate" class="text-2xl font-black text-emerald-400">1.00</span>
+                            <span class="text-xs text-slate-400">°Brix/day</span>
+                        </div>
+                    </div>
+                </div>
+[20/5/2026 2:44 PM] Shikin UMK: <!-- Dynamic Academic Explanation Box -->
+                <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-850">
+                    <div class="flex items-center space-x-2 text-xs font-semibold uppercase text-slate-400 mb-2">
+                        <span class="text-emerald-500">🧪</span>
+                        <span>Agro-Product Technologist Interpretation</span>
+                    </div>
+                    <p id="statExplanation" class="text-sm text-slate-300 leading-relaxed">
+                        Click on any day in the ripening cycle graph above to analyze metabolic behaviors, determine processing windows, and calculate the local rate of change!
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 bg-slate-950 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+            <div>
+                &copy; 2026 Malaysian Agro Product Technology Education Interface. Developed for academic demonstration of Calculus applications in Biological Systems.
+            </div>
+            <div class="flex space-x-4">
+                <a href="https://www.mardi.gov.my" target="_blank" class="hover:underline hover:text-emerald-400">MARDI Manual</a>
+                <a href="https://www.mpib.gov.my" target="_blank" class="hover:underline hover:text-emerald-400">MPIB Standards</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mathematical Constants & Base Values
+        const L = 16;      // Active sugar accumulation capacity (from starchy pre-ripe to peak sweet)
+        const C = 2;       // Basal sugar level at ripening onset (Day 0)
+        const X0 = 15;     // Inflection point coordinate (Peak enzyme rate occurred at exactly 15 days of maturation study)
+
+        // UI references
+        const tempSlider = document.getElementById('tempSlider');
+        const tempVal = document.getElementById('tempVal');
+        const statDay = document.getElementById('statDay');
+        const statBrix = document.getElementById('statBrix');
+        const statRate = document.getElementById('statRate');
+        const statExplanation = document.getElementById('statExplanation');
+        const inspectorPanel = document.getElementById('inspectorPanel');
+
+        // Initial setup state
+        let currentTemp = 28; // Standard tropical ambient baseline in C
+        let selectedIndex = 15; // Set starting inspector to day 15 (inflection point)
+        let chartInstance = null;
+
+        // Calculate rate constant (k) based on ambient temperature
+        // Represents biological reaction kinetics (Arrhenius relationship simplified for students)
+        function getK(T) {
+            return 0.25 + 0.015 * (T - 28);
+        }
+
+        // f(x): Logistic curve modeling total Brix level
+        function f(x, k) {
+            return L / (1 + Math.exp(-k * (x - X0))) + C;
+        }
+
+        // f'(x): First derivative representing rate of sugar change per day
+        function f_prime(x, k) {
+            const expTerm = Math.exp(-k * (x - X0));
+            return (L * k * expTerm) / Math.pow(1 + expTerm, 2);
+        }
+[20/5/2026 2:44 PM] Shikin UMK: // Generates agricultural wisdom / scientific insights depending on where you select
+        function getExplanation(day, brix, rate, k) {
+            let desc = "";
+            const optimalHarvestBrix = 14.0;
+            
+            if (day < 7) {
+                desc = <strong>Early Ripening Stage (Pre-climacteric):</strong> The pineapple sits at a sour ${brix.toFixed(1)}°Brix. Starch-to-sugar synthesis has barely started (rate is a tiny ${rate.toFixed(2)} °Brix/day). Harvesting now is unfeasible; fruit will be woody, acid-rich, and unacceptable for MD2 canning standard.;
+            } else if (day >= 7 && day < 12) {
+                desc = <strong>Transitioning Stage:</strong> The sugar accumulation rate is accelerating quickly to ${rate.toFixed(2)} °Brix/day. Starch reserves are actively mobilizing into simple sugars. Fruit has begun emitting volatile esters. Excellent tracking point for processors scheduling transport schedules.;
+            } else if (day >= 12 && day <= 18) {
+                const maxRateVal = (L * k / 4).toFixed(2);
+                desc = <strong>The Inflection Peak (Metabolic Peak):</strong> At Day ${day}, you are hovering near the maximal sugar accumulation rate of <span class="text-emerald-400 font-semibold">${rate.toFixed(2)} °Brix/day</span> (Mathematical Peak is ${maxRateVal} °Brix/day at Day 15). At this phase, the fruit is undergoing immense physiological change. Excellent for enzymology researchers testing starch cell breakdown.;
+            } else if (day > 18 && day <= 24) {
+                desc = <strong>Premium Harvest Window:</strong> Total Soluble Solids have successfully passed the MPIB threshold of 14°Brix (currently at <span class="text-amber-400 font-semibold">${brix.toFixed(1)}°Brix</span>). Notice that the accumulation rate is declining (${rate.toFixed(2)} °Brix/day) because the fruit is reaching full sugar capacity. Excellent balance of shelf-life stability and high-end natural sweetness for export!;
+            } else {
+                desc = <strong>Senescence & Over-Ripeness:</strong> Sugar levels have maxed out at ${brix.toFixed(1)}°Brix with the accumulation rate approaching zero (${rate.toFixed(2)} °Brix/day). Fruit tissue softens rapidly, showing high susceptibility to mechanical bruising during processing, along with yeast fermentation risks. Ideal for urgent local processing or vinegar conversion!;
+            }
+
+            // Temperature impact analysis to connect derivatives to processing realities
+            if (currentTemp > 30) {
+                desc +=  <span class="text-emerald-400 block mt-2">🔥 Note: High ambient heat (${currentTemp}°C) is forcing a steep derivative slope, shrinking the golden premium harvest window.</span>;
+            } else if (currentTemp < 26) {
+                desc +=  <span class="text-amber-400 block mt-2">❄️ Note: Cool room controls (${currentTemp}°C) slow enzymatic conversion, stretching the maturation timeline and easing processing bottlenecks.</span>;
+            }
+
+            return desc;
+        }
+
+        // Generate dataset points
+        function generateData(T) {
+            const k = getK(T);
+            const dataDays = [];
+            const dataBrix = [];
+            const dataRates = [];
+
+            for (let day = 0; day <= 30; day++) {
+                dataDays.push(day);
+                dataBrix.push(f(day, k));
+                dataRates.push(f_prime(day, k));
+            }
+
+            return { dataDays, dataBrix, dataRates };
+        }
+
+        // Update the inspector text blocks manually
+        function updateInspector(day, T) {
+            const k = getK(T);
+            const brix = f(day, k);
+            const rate = f_prime(day, k);
+[20/5/2026 2:44 PM] Shikin UMK: statDay.innerText = day;
+            statBrix.innerText = brix.toFixed(2);
+            statRate.innerText = rate.toFixed(3);
+            statExplanation.innerHTML = getExplanation(day, brix, rate, k);
+            
+            // Highlight effect on the statistics card
+            inspectorPanel.classList.remove('border-slate-800');
+            inspectorPanel.classList.add('border-emerald-500/50');
+            setTimeout(() => {
+                inspectorPanel.classList.remove('border-emerald-500/50');
+                inspectorPanel.classList.add('border-emerald-500/25');
+            }, 300);
+        }
+
+        // Initializing the Visual Chart
+        function initChart() {
+            const ctx = document.getElementById('kineticsChart').getContext('2d');
+            const data = generateData(currentTemp);
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.dataDays,
+                    datasets: [
+                        {
+                            label: 'Sugar Level (f(x) in °Brix)',
+                            data: data.dataBrix,
+                            borderColor: '#fbbf24', // golden yellow
+                            backgroundColor: 'rgba(251, 191, 36, 0.05)',
+                            borderWidth: 3,
+                            yAxisID: 'yBrix',
+                            tension: 0.3,
+                            fill: true,
+                            pointBackgroundColor: '#fbbf24',
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#1e293b',
+                            pointHoverBorderColor: '#fbbf24',
+                            pointHoverBorderWidth: 3,
+                        },
+                        {
+                            label: "Accumulation Speed (f'(x) in °Brix/day)",
+                            data: data.dataRates,
+                            borderColor: '#34d399', // emerald green
+                            borderDash: [5, 5],
+                            backgroundColor: 'rgba(52, 211, 153, 0.05)',
+                            borderWidth: 2.5,
+                            yAxisID: 'yRate',
+                            tension: 0.3,
+                            fill: true,
+                            pointBackgroundColor: '#34d399',
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#1e293b',
+                            pointHoverBorderColor: '#34d399',
+                            pointHoverBorderWidth: 3,
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#94a3b8',
+                                font: {
+                                    family: 'Inter',
+                                    size: 11,
+                                    weight: 'bold'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleColor: '#f8fafc',
+                            bodyColor: '#cbd5e1',
+                            borderColor: '#334155',
+                            borderWidth: 1,
+                            padding: 12,
+                            cornerRadius: 8,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+[20/5/2026 2:44 PM] Shikin UMK: if (context.parsed.y !== null) {
+                                        label += context.parsed.y.toFixed(3);
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: 'rgba(51, 65, 85, 0.3)'
+                            },
+                            ticks: {
+                                color: '#94a3b8',
+                                font: {
+                                    family: 'Inter',
+                                    size: 11
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Days of Ripening Phase (DAF Maturation Progress)',
+                                color: '#94a3b8',
+                                font: {
+                                    family: 'Inter',
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        yBrix: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            min: 0,
+                            max: 20,
+                            grid: {
+                                color: 'rgba(51, 65, 85, 0.3)'
+                            },
+                            ticks: {
+                                color: '#fbbf24',
+                                font: {
+                                    family: 'Inter'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Total Sugar Index (°Brix)',
+                                color: '#fbbf24',
+                                font: {
+                                    family: 'Inter',
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        yRate: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            min: 0,
+                            max: 2,
+                            grid: {
+                                drawOnChartArea: false, // only want the grid lines for left y-axis
+                            },
+                            ticks: {
+                                color: '#34d399',
+                                font: {
+                                    family: 'Inter'
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: "Sugar Accumulation Velocity (f'(x) in °Brix/day)",
+                                color: '#34d399',
+                                font: {
+                                    family: 'Inter',
+                                    weight: '600'
+                                }
+                            }
+                        }
+                    },
+                    // Listens to the click on the plot to identify Ripening Day
+                    onClick: (event, elements) => {
+                        if (elements && elements.length > 0) {
+                            const index = elements[0].index;
+                            selectedIndex = index;
+                            updateInspector(selectedIndex, currentTemp);
+                        }
+                    }
+                }
+            });
+        }
+[20/5/2026 2:44 PM] Shikin UMK: // Dynamic update function triggered when temperature modifies
+        function updateChartKinetics(T) {
+            const data = generateData(T);
+            chartInstance.data.datasets[0].data = data.dataBrix;
+            chartInstance.data.datasets[1].data = data.dataRates;
+            chartInstance.update();
+            updateInspector(selectedIndex, T);
+        }
+
+        // Listeners for Interactive Controls
+        tempSlider.addEventListener('input', (e) => {
+            currentTemp = parseInt(e.target.value);
+            tempVal.innerText = ${currentTemp}°C;
+            updateChartKinetics(currentTemp);
+        });
+
+        // Window startup instantiation
+        window.onload = function() {
+            initChart();
+            updateInspector(selectedIndex, currentTemp);
+        }
+    </script>
+</body>
+</html>
